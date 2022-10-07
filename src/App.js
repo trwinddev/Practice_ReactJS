@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+// import { GlobalStyles } from "./GlobalStyles";
+import "./App.css";
+// import Card from "./components/card/Card";
+// import Card from "./components/card/Card";
+// import CardList from "./components/card/CardList";
+// import Card2 from "./components/card/Card2";
+// import { ThemeProvider } from "styled-components";
+// import CardTailWind from "./components/card/CardTailWind";
+import Photos from "./components/photo/Photos";
+
+// const theme = {
+//   colors: {
+//     blue: "#2979ff",
+//   },
+// };
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {/* 
+    <ThemeProvider theme={theme}>
+    </ThemeProvider> */}
+      {/* <GlobalStyles></GlobalStyles> */}
+      {/* <CardList> */}
+      {/* <CardTailWind primary></CardTailWind> */}
+      {/* </CardList> */}
+      <Photos></Photos>
     </div>
   );
 }
