@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 // const getRandomPhotos = (page) => {
 //   return axios
@@ -72,14 +72,15 @@ const GetRandomPhotos = async (page) => {
 const Photos = () => {
   const [randomPhotos, setRandomPhotos] = useState([]);
   const [nextPage, setNextPage] = useState(1);
-  const handleLoadMore = async () => {
+  const handleLoadMore = useRef({});
+  handleLoadMore.current = async () => {
     const images = await GetRandomPhotos(nextPage);
     const newPhotos = [...randomPhotos, ...images];
     setRandomPhotos(newPhotos);
     setNextPage(nextPage + 1);
   };
   useEffect(() => {
-    handleLoadMore();
+    handleLoadMore.current();
   }, []);
   return (
     <>
@@ -97,7 +98,7 @@ const Photos = () => {
       </div>
       <div className="text-center">
         <button
-          onClick={handleLoadMore}
+          onClick={handleLoadMore.current}
           className="inline-block px-8 py-4 text-white bg-purple-500"
         >
           Load more
